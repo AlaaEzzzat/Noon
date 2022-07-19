@@ -1,0 +1,26 @@
+.navbar{
+    background-color:#FEEE00;
+    color: #404553;
+}
+.navbar .navbar-brand img{
+    height:30px
+}
+.navbar .navTitle{
+    font-size:20px;
+    font-weight: bold;
+    margin:0;
+}
+.navbar .navbar-nav .notification{
+    cursor: pointer;
+    margin-right: 15px;
+    font-size: 19px;
+    padding: 10px 15px;
+    border-radius: 50%;
+}
+.navbar i{
+    color: #404553;
+}
+.navbar .btn{
+    color: #404553;
+    font-weight: bold;
+}

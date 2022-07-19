@@ -1,0 +1,10 @@
+.admin__footer {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    padding: 0 var(--spacing);
+    color: #4e5561;
+    background-color: #1d2127;
+  }

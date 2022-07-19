@@ -10,12 +10,11 @@ import {
 } from "firebase/firestore";
 
 export const getAllProducts = async () => {
-
-  const userCollectionRef = collection(db,"Products");
+  const userCollectionRef = collection(db, "Products");
 
   const data = await getDocs(userCollectionRef);
 
-  const allProduct = data.docs.map((doc) => ({ ...doc.data(),id: doc.id }));
+  const allProduct = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
   return allProduct;
 };
 export const addProduct = async (product) => {
@@ -29,9 +28,8 @@ export const updateProduct = async (id, productUpdated) => {
 
 //not sure
 export const getProductByID = async (id) => {
-  const productRef = doc(db,"Products", id);
- return await getDoc(productRef);
-   
+  const productRef = doc(db, "Products", id);
+  return await getDoc(productRef);
 };
 
 export const deleteProduct = async (id) => {
