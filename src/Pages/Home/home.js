@@ -14,8 +14,9 @@ import Footer from "./../../Components/footer/footer";
 const Home = () => {
   return (
     <>
-      <div className="Admin-Dashboard">
+      <div className="Admin-Dashboard ">
         <Navbar />
+        <div className="container-fluid">
         <div className="row">
           <Router>
             <div className="col-sm-2">
@@ -23,9 +24,10 @@ const Home = () => {
             </div>
             <div className="col-sm-10">
               <Switch>
-                <Route path="/AllProduct" exact children={<AllProducts />} />
+              <Route path="/" exact children={<AllProducts/>} />
+                <Route path="/AllProduct" exact children={<AllProducts/>} />
                 <Route path="/SoldProducts" exact children={<SoldProducts />} />
-                <Route path="/AllUser" exact children={<AllUser />} />
+                <Route path="/AllUser" exact children={<AllUser/>} />
                 <Route path="/BestSeller" exact children={<BestSeller />} />
                 <Route
                   path="/PendingProducts"
@@ -36,6 +38,7 @@ const Home = () => {
               </Switch>
             </div>
           </Router>
+          </div>
         </div>
         <Footer />
       </div>

@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
-/*import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
   import {
   getAllProducts,
   deleteProduct,
   getProductByID,
 } from "./myFirebase/productFirebase"; 
-*/
 import NotFound from "./Pages/notFound/notFound";
 import Home from "./Pages/Home/home";
 import Login from "./Pages/login/login";

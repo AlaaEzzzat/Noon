@@ -1,8 +1,17 @@
+.admin__nav{
+  
+ 
+}
 .menu {
     list-style-type: none;
     padding: 0;
     background-color: #FEEE00;
     flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0%;
+    top: 0%;
+  
   }
   @media (max-width: 576px) {
     .menu{

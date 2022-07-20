@@ -5,8 +5,16 @@ import { Link } from "react-router-dom";
 export default function sidebar() {
   return (
     <nav className="admin__nav">
-      <button className="showBtn">Show</button>
-      <ul className="menu d-flex">
+     
+      <ul className="menu ">
+      <li className="p-3">
+      <Link className="navbar-brand " to="/">
+          <img
+            src="https://z.nooncdn.com/s/app/com/noon/design-system/logos/noon-logo-en.svg"
+            alt="Noon"
+          />
+        </Link>
+        </li>
         <li className="menu__item">
           <Link className="menu__link" to="/AllProduct">
             All Products

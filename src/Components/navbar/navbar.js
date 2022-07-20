@@ -8,16 +8,11 @@ export default function Navbar() {
   const [userName, setUserName] = useState("Alaa");
 
   return (
-    <nav className="navbar navbar-expand-lg ">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          <img
-            src="https://z.nooncdn.com/s/app/com/noon/design-system/logos/noon-logo-en.svg"
-            alt="Noon"
-          />
-        </Link>
-        <div className="nav-item">
-          <p className="navTitle">Welcome Back! {userName}</p>
+    <nav className="navbar  navbar-expand-lg ">
+      <div className="container-fluid  ">
+     
+        <div className="nav-item m-auto ">
+          <p className="navTitle ms-5">Welcome Back! {userName}</p>
         </div>
         <div className="d-flex justify-content-center">
           <ul className="navbar-nav d-flex align-items-center flex-row justify-content-between">

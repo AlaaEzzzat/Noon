@@ -7,4 +7,6 @@
     padding: 0 var(--spacing);
     color: #4e5561;
     background-color: #1d2127;
+    z-index: 1000;
+    position: relative;
   }
