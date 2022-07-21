@@ -32,6 +32,11 @@ export const getUserByID = async (id) => {
   return await getDoc(userDoc);
 };
 
+export const getUserByEmail = async (email) => {
+  const userDoc = doc(db, "users", email);
+  return await getDoc(userDoc);
+};
+
 export const deleteUser = async (id) => {
   const userDoc = doc(db, "users", id);
   await deleteDoc(userDoc);
