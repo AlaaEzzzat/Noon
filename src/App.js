@@ -6,19 +6,22 @@ import {
   deleteProduct,
   getProductByID,
 } from "./myFirebase/productFirebase";
+import FinishedOrders from "./Pages/Home/FinishedOrders";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState({});
 
-  useEffect(() => {
-    getProductByID("CyOgr7oaYMnvyYYDzgEU").then((p) => {
-      setProduct({ ...p.data(), id: p.id });
-    });
-  }, []);
+  // useEffect(() => {
+  //   getProductByID("CyOgr7oaYMnvyYYDzgEU").then((p) => {
+  //     setProduct({ ...p.data(), id: p.id });
+  //   });
+  // }, []);
 
   return (
     <>
-      <h1>{product.title}</h1>
+    <FinishedOrders></FinishedOrders>
     </>
   );
 }

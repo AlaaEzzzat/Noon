@@ -18,14 +18,24 @@ export const getAllProducts = async () => {
   const allProduct = data.docs.map((doc) => ({ ...doc.data(),id: doc.id }));
   return allProduct;
 };
+
+
+
 export const addProduct = async (product) => {
   const userCollectionRef = collection(db, "Products");
   await addDoc(userCollectionRef, product);
 };
+
+
+
+
 export const updateProduct = async (id, productUpdated) => {
   const ProductDoc = doc(db, "Products", id);
   await updateDoc(ProductDoc, productUpdated);
 };
+
+
+
 
 //not sure
 export const getProductByID = async (id) => {
@@ -34,7 +44,14 @@ export const getProductByID = async (id) => {
    
 };
 
+
+
+
+
 export const deleteProduct = async (id) => {
   const ProductDoc = doc(db, "Products", id);
   await deleteDoc(ProductDoc);
 };
+
+
+
