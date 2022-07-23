@@ -19,10 +19,10 @@ const Home = () => {
         <div className="container-fluid">
         <div className="row">
           <Router>
-            <div className="col-sm-2">
+            <div className="">
               <Sidebar />
             </div>
-            <div className="col-sm-10">
+            <div className="   col-12 offset-0   col-sm-8 offset-sm-4 col-md-9 offset-md-3 col-lg-10 offset-lg-2 home">
               <Switch>
               <Route path="/" exact children={<AllProducts/>} />
                 <Route path="/AllProduct" exact children={<AllProducts/>} />

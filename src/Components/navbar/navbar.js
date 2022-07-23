@@ -11,8 +11,8 @@ export default function Navbar() {
     <nav className="navbar  navbar-expand-lg ">
       <div className="container-fluid  ">
      
-        <div className="nav-item m-auto ">
-          <p className="navTitle ms-5">Welcome Back! {userName}</p>
+        <div className="nav-item m-auto   ">
+          <p className="navTitle  ">Welcome Back! {userName}</p>
         </div>
         <div className="d-flex justify-content-center">
           <ul className="navbar-nav d-flex align-items-center flex-row justify-content-between">
@@ -23,7 +23,7 @@ export default function Navbar() {
                   pendingProduct.length > 0 ? "rgb(154, 245, 9)" : "#FFF",
               }}
             >
-              <i class="fa fa-bell"></i>
+              <i className="fa fa-bell"></i>
             </li>
             <li className="nav-item">
               <Link className="btn btn-light" to="Login">

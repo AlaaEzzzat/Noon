@@ -1,7 +1,12 @@
-.admin__nav{
-  
- 
+.btn-col{
+ display: none !important;
+ position: absolute;
+ top :3px;
+ left:10px
 }
+
+
+
 .menu {
     list-style-type: none;
     padding: 0;
@@ -11,15 +16,20 @@
     height: 100vh;
     left: 0%;
     top: 0%;
+    z-index: 1000;
+    
+    
   
   }
-  @media (max-width: 576px) {
-    .menu{
-      display: none;
-    }
-    .showBtn{
-      display: block;
-    }
+  @media (max-width:575px) {
+    
+    .btn-col{
+      display: block !important;
+      }
+      .admin__nav1{
+  display: none;
+      }
+    
   }
   .menu__item {
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);

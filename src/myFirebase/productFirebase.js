@@ -17,6 +17,14 @@ export const getAllProducts = async () => {
   const allProduct = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
   return allProduct;
 };
+export const getPendingProducts = async () => {
+  const userCollectionRef = collection(db, "PendingProducts");
+
+  const data = await getDocs(userCollectionRef);
+
+  const allProduct = data.docs.map((doc) => ({ ...doc.data(), id:doc.id }));
+  return allProduct;
+};
 export const addProduct = async (product) => {
   const userCollectionRef = collection(db, "Products");
   await addDoc(userCollectionRef, product);
@@ -34,5 +42,9 @@ export const getProductByID = async (id) => {
 
 export const deleteProduct = async (id) => {
   const ProductDoc = doc(db, "Products", id);
+  await deleteDoc(ProductDoc);
+};
+export const deletePendingProduct = async (id) => {
+  const ProductDoc = doc(db, "PendingProducts", id);
   await deleteDoc(ProductDoc);
 };

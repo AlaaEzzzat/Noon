@@ -24,3 +24,20 @@
     color: #404553;
     font-weight: bold;
 }
+
+
+
+@media (max-width: 770px) {
+
+    .navbar .navTitle{
+     padding-left:170px;
+    }
+   
+  }
+  @media (max-width: 575px) {
+
+    .navbar .navTitle{
+     padding-left:0px;
+    }
+   
+  }
