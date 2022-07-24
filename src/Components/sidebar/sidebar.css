@@ -1,0 +1,46 @@
+.btn-col{
+ display: none !important;
+ position: absolute;
+ top :3px;
+ left:10px
+}
+
+
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    background-color: #FEEE00;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0%;
+    top: 0%;
+    z-index: 1000;
+    
+    
+  
+  }
+  @media (max-width:575px) {
+    
+    .btn-col{
+      display: block !important;
+      }
+      .admin__nav1{
+  display: none;
+      }
+    
+  }
+  .menu__item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .menu__link {
+    display: block;
+    padding: 1rem 2rem;
+    color: #76808f;
+    text-decoration: none;
+  }
+  .menu__link:hover, .menu__link:focus {
+    color: #fff;
+    background-color: #1f222d;
+  }
