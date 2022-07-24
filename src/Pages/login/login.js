@@ -3,8 +3,15 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./login.css";
+import { nameContext } from './../../contexts/name';
 import { getAllAdmins } from "./../../myFirebase/adminFirebase";
+import { useContext } from 'react';
+
 export default function Login() {
+
+  const{userName,setName} =useContext(nameContext)
+
+  
   let history = useHistory();
   const [user, setUser] = useState({
     email: "",
@@ -27,7 +34,7 @@ export default function Login() {
   }, []);
 
   const handleInputChange = (evt) => {
-    if (evt.target.name == "email") {
+    if (evt.target.name === "email") {
       console.log("Email");
       setUser({
         ...user,
@@ -37,7 +44,7 @@ export default function Login() {
       setErrors({
         ...errors,
         emailErrors:
-          evt.target.value.length == 0
+          evt.target.value.length === 0
             ? "This field is required"
             : regex.test(evt.target.value)
             ? ""
@@ -47,13 +54,13 @@ export default function Login() {
       console.log("password");
       setUser({
         ...user,
-        password: evt.target.value,
+        password:evt.target.value,
       });
 
       setErrors({
         ...errors,
         passwordErrors:
-          evt.target.value.length == 0
+          evt.target.value.length === 0
             ? "This field is required"
             : evt.target.value.length < 8
             ? "The Password must be at least 8 character"
@@ -64,7 +71,7 @@ export default function Login() {
 
   const [passwordType, setPasswordType] = useState("password");
   const togglePassword = () => {
-    if (passwordType == "password") {
+    if (passwordType === "password") {
       setPasswordType("text");
       setShow(true);
     } else {
@@ -78,14 +85,15 @@ export default function Login() {
   };
   const login = () => {
     firebaseAdmins.map((fireAdmin) => {
-      if (fireAdmin.email != user.email) {
+      if (fireAdmin.email !== user.email) {
         alert("Wrong email");
       } else {
-        if (fireAdmin.password == user.password) {
+        if (fireAdmin.password === user.password) {
           alert("found");
-
+          setName(fireAdmin.name)
           goToHome();
-          console.log();
+          
+
         } else {
           alert("Wrong password");
         }

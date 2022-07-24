@@ -1,28 +1,21 @@
 import React from "react";
 import "./App.css";
-import { useState, useEffect } from "react";
-import {
-  getAllProducts,
-  deleteProduct,
-  getProductByID,
-} from "./myFirebase/productFirebase";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NotFound from "./Pages/notFound/notFound";
 
-import AllUser from "./Pages/allUser/allUser";
-import BestSeller from "./Pages/bestSeller/bestSeller";
-import PendingProducts from "./Pages/pendingProducts/pendingProducts";
-import AllProducts from "./Pages/allProducts/allProducts";
 import Home from "./Pages/Home/home";
-import FinishedOrders from "./Pages/finishedOrders/finishedOrders";
+
 import Login from "./Pages/login/login";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
-/* import Popper from "@popperjs/core"; */
+
 import "font-awesome/css/font-awesome.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { useState } from 'react';
+import {NameProvider} from './contexts/name'
 
 function App() {
   /* const [products, setProducts] = useState([]);
@@ -44,10 +37,11 @@ function App() {
       setProduct({ ...p.data(), id: p.id });
     });
   }, []); */
-
+  const [name,setName]=useState("") 
   return (
     <>
       <Router>
+   <NameProvider value={{name,setName}}>
         <Switch>
           <Route path="/" exact component={Login} />
           <Route path="/Home" exact component={Home} />
@@ -60,7 +54,8 @@ function App() {
           <Route path="*" exact component={NotFound} />
 
           {/* */}
-        </Switch>
+          </Switch>
+          </NameProvider>
       </Router>
     </>
   );
