@@ -39,6 +39,7 @@
     padding: 1rem 2rem;
     color: #76808f;
     text-decoration: none;
+    font-weight:600;
   }
   .menu__link:hover, .menu__link:focus {
     color: #fff;

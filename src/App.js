@@ -6,10 +6,15 @@ import {
   deleteProduct,
   getProductByID,
 } from "./myFirebase/productFirebase";
-import FinishedOrders from "./Pages/Home/FinishedOrders";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NotFound from "./Pages/notFound/notFound";
+
+import AllUser from "./Pages/allUser/allUser";
+import BestSeller from "./Pages/bestSeller/bestSeller";
+import PendingProducts from "./Pages/pendingProducts/pendingProducts";
+import AllProducts from "./Pages/allProducts/allProducts";
 import Home from "./Pages/Home/home";
+import FinishedOrders from "./Pages/finishedOrders/finishedOrders";
 import Login from "./Pages/login/login";
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -46,7 +51,15 @@ function App() {
         <Switch>
           <Route path="/" exact component={Login} />
           <Route path="/Home" exact component={Home} />
+          <Route path="/Home/AllUser" exact component={Home} />
+          <Route path="/Home/BestSeller" exact component={Home} />
+          <Route path="/Home/PendingProducts" exact component={Home} />
+          <Route path="/Home/AllProduct" exact component={Home} />
+          <Route path="/Home/FinishedOrders" exact component={Home} />
+          <Route path="/Login" exact component={Login} />
           <Route path="*" exact component={NotFound} />
+
+          {/* */}
         </Switch>
       </Router>
     </>

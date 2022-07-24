@@ -11,12 +11,7 @@ export default function Login() {
     password: "",
   });
   const [show, setShow] = useState(false);
-  const [firebaseAdmins, setFirebaseAdmins] = useState([
-    {
-      email: "test@gmail.com",
-      password: "11112222",
-    },
-  ]);
+  const [firebaseAdmins, setFirebaseAdmins] = useState([]);
 
   const [errors, setErrors] = useState({
     emailErrors: null,
@@ -24,11 +19,11 @@ export default function Login() {
   });
 
   useEffect(() => {
-    /*   getAllAdmins().then((p) => {
+    getAllAdmins().then((p) => {
       console.log(p);
-      setFirebaseAdmins(...p);
+      setFirebaseAdmins([...p]);
       console.log(firebaseAdmins);
-    }); */
+    });
   }, []);
 
   const handleInputChange = (evt) => {

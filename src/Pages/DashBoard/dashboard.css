@@ -1,0 +1,18 @@
+.dashboard .card{
+    width: 350px;
+    padding: 20px 0;
+}
+@media (max-width: 768px) {
+    .dashboard .card{
+        width: 90%;
+    }
+}
+.dashboard .cardCon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard .card i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}

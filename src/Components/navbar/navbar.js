@@ -10,7 +10,6 @@ export default function Navbar() {
   return (
     <nav className="navbar  navbar-expand-lg ">
       <div className="container-fluid  ">
-     
         <div className="nav-item m-auto   ">
           <p className="navTitle  ">Welcome Back! {userName}</p>
         </div>
@@ -26,7 +25,7 @@ export default function Navbar() {
               <i className="fa fa-bell"></i>
             </li>
             <li className="nav-item">
-              <Link className="btn btn-light" to="Login">
+              <Link className="btn btn-light" to="/Login">
                 Log out
               </Link>
             </li>
