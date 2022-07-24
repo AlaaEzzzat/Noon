@@ -10,14 +10,20 @@ import {
 
 const FinishedOrders = () => {
 const [Orders, setOrders] = useState([]);
+const [Category, setCategory] = useState([]);
+
 
       useEffect(() => {
-      getAllOrders().then((Orders) => {
+      getAllOrders().then((Orders) => {        
        setOrders(Orders);
+      
+    //    console.log(Orders[0].productscategory);
+    //    setCategory(Orders.productscategory);
       });
     ;
   }, []);
-  console.log(Orders);
+//  console.log(Orders);
+  //console.log(Category);
     return (  
         <>
         <table className="table table-striped container border my-5 text-center">
@@ -46,7 +52,11 @@ const [Orders, setOrders] = useState([]);
                     {RecievedOrder.totallprice} $
                 </td>
                 <td>
-                    {RecievedOrder.productscategory}
+                    {Orders[index].productscategory.map((RecievedCategory , i) =>{
+                        return (
+                            <p key={i}>{RecievedCategory}</p>
+                        )
+                    })}
                 </td>
                 <td>
                     {RecievedOrder.numberofproducts}
