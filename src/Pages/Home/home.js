@@ -55,7 +55,7 @@ const Home = () => {
               <div className="">
                 <Sidebar />
               </div>
-              <div className="col-12 offset-0   col-sm-8 offset-sm-4 col-md-9 offset-md-3 col-lg-10 offset-lg-2 home pt-3 ">
+              <div className="col-12 offset-0 col-sm-8 offset-sm-4 col-md-9 offset-md-3 col-lg-10 offset-lg-2 home pt-3 ">
                 <Switch>
                   {routes.map((route, index) => (
                     <Route

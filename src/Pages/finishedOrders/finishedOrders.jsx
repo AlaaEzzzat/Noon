@@ -4,18 +4,18 @@ import { getAllOrders } from "./../../myFirebase/FinishedOrdersFirebase";
 
 const FinishedOrders = () => {
   const [Orders, setOrders] = useState([]);
+  const [Category, setCategory] = useState([]);
 
   useEffect(() => {
     getAllOrders().then((Orders) => {
       setOrders(Orders);
     });
   }, []);
-  console.log(Orders);
   return (
     <>
       <table
         className="table table-striped container border my-5 text-center"
-        style={{ backgroundColor: "#FFF", color: "#000" }}
+        style={{ backgroundColor: "#FFF" }}
       >
         <thead className=" table-warning">
           <tr>
@@ -35,7 +35,11 @@ const FinishedOrders = () => {
                 <td>{index + 1}</td>
                 <td>{RecievedOrder.userId}</td>
                 <td>{RecievedOrder.totallprice} $</td>
-                <td>{RecievedOrder.productscategory}</td>
+                <td>
+                  {Orders[index].productscategory.map((RecievedCategory, i) => {
+                    return <p key={i}>{RecievedCategory}</p>;
+                  })}
+                </td>
                 <td>{RecievedOrder.numberofproducts}</td>
                 <td>
                   {RecievedOrder.cashondelivery == true ? "Yes" : "Paid Online"}
