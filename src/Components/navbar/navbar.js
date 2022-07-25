@@ -2,16 +2,20 @@ import React from "react";
 import "./navbarCss.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useContext } from 'react';
+
+import { nameContext } from './../../contexts/name';
 
 export default function Navbar() {
   const [pendingProduct, setPendingProduct] = useState([]);
-  const [userName, setUserName] = useState("Alaa");
+  const{name,setName} =useContext(nameContext)
+  
 
   return (
     <nav className="navbar  navbar-expand-lg ">
       <div className="container-fluid  ">
         <div className="nav-item m-auto   ">
-          <p className="navTitle  ">Welcome Back! {userName}</p>
+          <p className="navTitle  ">Welcome Back! {name}</p>
         </div>
         <div className="d-flex justify-content-center">
           <ul className="navbar-nav d-flex align-items-center flex-row justify-content-between">
