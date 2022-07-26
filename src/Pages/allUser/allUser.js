@@ -30,10 +30,10 @@ const AllUser = () => {
         <tbody className="text-center">
           {users.map((returnUsers, index) => {
             return (
-              <tr key={index} >
+              <tr key={index}>
                 <td>{index + 1}</td>
-                <td >{returnUsers.firstname}</td>
-                <td>{returnUsers.lastname} $</td>
+                <td>{returnUsers.firstname}</td>
+                <td>{returnUsers.lastname}</td>
                 <td>{returnUsers.email}</td>
                 <td>{returnUsers.password}</td>
               </tr>
