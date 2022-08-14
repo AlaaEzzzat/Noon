@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getAllOrders } from "./../../myFirebase/FinishedOrdersFirebase";
+import { getAllOrders } from "../../myFirebase/FinishedOrdersFirebase";
 
 const FinishedOrders = () => {
   const [Orders, setOrders] = useState([]);
@@ -14,21 +14,21 @@ const FinishedOrders = () => {
   return (
     <>
       <table
-        className="table table-striped container border my-5 text-center"
+        className="table table-striped container border my-5 text-center sm-2  md-5"
         style={{ backgroundColor: "#FFF" }}
       >
-        <thead className=" table-warning">
+        <thead className=" table-warning sm-2  md-5">
           <tr>
             <th>Order Number</th>
             <th>User ID</th>
             <th>Totall Price</th>
             <th>Products Category</th>
-            <th>Number Of Products</th>
+            <th>Number Of Products Per Category</th>
             <th>Cash On Delivery</th>
           </tr>
         </thead>
 
-        <tbody className="text-center">
+        <tbody className="text-center sm-2  md-5">
           {Orders.map((RecievedOrder, index) => {
             return (
               <tr key={index}>
@@ -40,7 +40,11 @@ const FinishedOrders = () => {
                     return <p key={i}>{RecievedCategory}</p>;
                   })}
                 </td>
-                <td>{RecievedOrder.numberofproducts}</td>
+                <td>
+                  {Orders[index].numberofproducts.map((RecievedProduct, i) => {
+                    return <p key={i}>{RecievedProduct}</p>;
+                  })}
+                </td>
                 <td>
                   {RecievedOrder.cashondelivery == true ? "Yes" : "Paid Online"}
                 </td>

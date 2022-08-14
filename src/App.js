@@ -14,48 +14,27 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "font-awesome/css/font-awesome.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { useState } from 'react';
-import {NameProvider} from './contexts/name'
+import { useState } from "react";
+import { NameProvider } from "./contexts/name";
 
 function App() {
-  /* const [products, setProducts] = useState([]);
-  const [product, setProduct] = useState({});
-
-
-  // useEffect(() => {
-  //   getProductByID("CyOgr7oaYMnvyYYDzgEU").then((p) => {
-  //     setProduct({ ...p.data(), id: p.id });
-  //   });
-  // }, []);
-
-  return (
-    <>
-    <FinishedOrders></FinishedOrders>
-
-  useEffect(() => {
-    getProductByID("CyOgr7oaYMnvyYYDzgEU").then((p) => {
-      setProduct({ ...p.data(), id: p.id });
-    });
-  }, []); */
-  const [name,setName]=useState("") 
+  const [name, setName] = useState("");
   return (
     <>
       <Router>
-   <NameProvider value={{name,setName}}>
-        <Switch>
-          <Route path="/" exact component={Login} />
-          <Route path="/Home" exact component={Home} />
-          <Route path="/Home/AllUser" exact component={Home} />
-          <Route path="/Home/BestSeller" exact component={Home} />
-          <Route path="/Home/PendingProducts" exact component={Home} />
-          <Route path="/Home/AllProduct" exact component={Home} />
-          <Route path="/Home/FinishedOrders" exact component={Home} />
-          <Route path="/Login" exact component={Login} />
-          <Route path="*" exact component={NotFound} />
-
-          {/* */}
+        <NameProvider value={{ name, setName }}>
+          <Switch>
+            <Route path="/" exact component={Login} />
+            <Route path="/Home" exact component={Home} />
+            <Route path="/Home/AllUser" exact component={Home} />
+            <Route path="/Home/BestSeller" exact component={Home} />
+            <Route path="/Home/PendingProducts" exact component={Home} />
+            <Route path="/Home/AllProduct" exact component={Home} />
+            <Route path="/Home/FinishedOrders" exact component={Home} />
+            <Route path="/Login" exact component={Login} />
+            <Route path="*" exact component={NotFound} />
           </Switch>
-          </NameProvider>
+        </NameProvider>
       </Router>
     </>
   );
