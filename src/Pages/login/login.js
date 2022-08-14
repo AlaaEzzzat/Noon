@@ -3,15 +3,13 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./login.css";
-import { nameContext } from './../../contexts/name';
+import { nameContext } from "./../../contexts/name";
 import { getAllAdmins } from "./../../myFirebase/adminFirebase";
-import { useContext } from 'react';
+import { useContext } from "react";
 
 export default function Login() {
+  const { userName, setName } = useContext(nameContext);
 
-  const{userName,setName} =useContext(nameContext)
-
-  
   let history = useHistory();
   const [user, setUser] = useState({
     email: "",
@@ -27,7 +25,6 @@ export default function Login() {
 
   useEffect(() => {
     getAllAdmins().then((p) => {
-      console.log(p);
       setFirebaseAdmins([...p]);
       console.log(firebaseAdmins);
     });
@@ -54,7 +51,7 @@ export default function Login() {
       console.log("password");
       setUser({
         ...user,
-        password:evt.target.value,
+        password: evt.target.value,
       });
 
       setErrors({
@@ -90,10 +87,9 @@ export default function Login() {
       } else {
         if (fireAdmin.password === user.password) {
           alert("found");
-          setName(fireAdmin.name)
+          setName(fireAdmin.name);
+          localStorage.setItem("adminName", fireAdmin.name);
           goToHome();
-          
-
         } else {
           alert("Wrong password");
         }

@@ -39,5 +39,5 @@ export const getUserByEmail = async (email) => {
 
 export const deleteUser = async (id) => {
   const userDoc = doc(db, "users", id);
-  await deleteDoc(userDoc);
+  await deleteDoc({ ...userDoc.data(), id: userDoc.id });
 };

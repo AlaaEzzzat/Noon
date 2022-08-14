@@ -1,15 +1,20 @@
 import React from "react";
 import "./navbarCss.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useContext } from 'react';
-
-import { nameContext } from './../../contexts/name';
+import { useContext } from "react";
+import { useState, useEffect } from "react";
+import { getUserByEmail } from "./../../myFirebase/userFirebase";
+import { nameContext } from "./../../contexts/name";
 
 export default function Navbar() {
   const [pendingProduct, setPendingProduct] = useState([]);
-  const{name,setName} =useContext(nameContext)
-  
+  const [name, setName] = useState("");
+  useEffect(() => {
+    const adminName = localStorage.getItem("adminName");
+    if (adminName) {
+      setName(adminName);
+    }
+  }, []);
 
   return (
     <nav className="navbar  navbar-expand-lg ">
