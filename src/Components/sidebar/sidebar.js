@@ -57,11 +57,11 @@ export default function sidebar() {
               Finished Orders
             </Link>
           </li>
-          <li className="menu__item">
+          {/*    <li className="menu__item">
             <Link className="menu__link" to="/Home/BestSeller">
               Best Sellers
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
 
@@ -98,11 +98,11 @@ export default function sidebar() {
               Finished Orders
             </Link>
           </li>
-          <li className="menu__item">
+          {/*  <li className="menu__item">
             <Link className="menu__link" to="/Home/BestSeller">
               Best Sellers
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>

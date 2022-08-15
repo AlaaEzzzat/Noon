@@ -6,7 +6,7 @@ import NotFound from "./Pages/notFound/notFound";
 import Home from "./Pages/Home/home";
 
 import Login from "./Pages/login/login";
-
+import { Redirect } from "react-router";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -16,7 +16,20 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { useState } from "react";
 import { NameProvider } from "./contexts/name";
-
+function PrivateRoute({ children, ...rest }) {
+  return (
+    <Route
+      {...rest}
+      render={() => {
+        return localStorage.getItem("adminEmail") ? (
+          children
+        ) : (
+          <Redirect to="/Login" />
+        );
+      }}
+    />
+  );
+}
 function App() {
   const [name, setName] = useState("");
   return (
@@ -25,7 +38,10 @@ function App() {
         <NameProvider value={{ name, setName }}>
           <Switch>
             <Route path="/" exact component={Login} />
-            <Route path="/Home" exact component={Home} />
+
+            <PrivateRoute path="/Home">
+              <Home />
+            </PrivateRoute>
             <Route path="/Home/AllUser" exact component={Home} />
             <Route path="/Home/BestSeller" exact component={Home} />
             <Route path="/Home/PendingProducts" exact component={Home} />
